@@ -1,18 +1,21 @@
 <?php
 
+use MessageBird\Objects\Message;
+use MessageBird\Client;
+
 class SMSTest
 {
-    private $message;
-    private $client;
+    private Message $message;
+    private Client $client;
     public function __construct()
     {
-        $this->client = new MessageBird\Client("Api Ket");
-        $this->message = new MessageBird\Objects\Message;
+        $this->client = new Client("Api Ket");
+        $this->message = new Message;
         $this->message->originator = "Test User";
     }
 
 
-    public function sendSms($recipient, $body)
+    public function sendSms(string $recipient, string $body): void
     {
         $this->message->recipients = [$recipient];
         $this->message->body = $body;

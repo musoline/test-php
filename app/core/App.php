@@ -4,9 +4,9 @@
 class App
 {
 
-    protected $controller = "HomeController";
-    protected $method = "index";
-    protected $params = [];
+    protected string $controller = "HomeController";
+    protected string $method = "index";
+    protected array $params = [];
     public function __construct()
     {
         $url = $this->parseUrl();

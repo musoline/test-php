@@ -3,10 +3,10 @@
 
 class Database
 {
-    private $servername = "localhost";
-    private $username = "root";
-    private $password = "";
-    private $connection;
+    private string $servername = "localhost";
+    private string $username = "root";
+    private string $password = "";
+    private PDO $connection;
 
 
     private function connect()

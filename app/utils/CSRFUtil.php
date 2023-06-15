@@ -2,7 +2,7 @@
 
 class CSRFUtil
 {
-    public static function createAndSet()
+    public static function createAndSet(): string
     {
         if (empty($_SESSION['token'])) {
             $_SESSION['token'] = bin2hex(random_bytes(32));
@@ -13,7 +13,7 @@ class CSRFUtil
 
 
 
-    public static function check($token = "")
+    public static function check(string $token = ""): bool
     {
 
         if (isset($_SESSION["token"]) && ($_SESSION["token"] === $token)) {

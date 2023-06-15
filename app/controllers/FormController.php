@@ -3,7 +3,7 @@
 
 class FormController extends Controller
 {
-    public function index($text = "")
+    public function index(string $text = ""): void
     {
 
         $text = isset($_POST["content"]) ? $_POST["content"] : "";

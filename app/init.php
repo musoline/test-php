@@ -8,4 +8,4 @@ require_once "utils/CSRFUtil.php";
 require_once "classes/MailTest.php";
 require_once "classes/SMSTest.php";
 
-$app = new App;
+$app  = new App;

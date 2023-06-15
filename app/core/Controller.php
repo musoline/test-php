@@ -2,13 +2,13 @@
 
 class Controller
 {
-    public function model($model)
+    public function model(string $model)
     {
         require_once "../app/models/" . $model . ".php";
         return new $model();
     }
 
-    public function view($view, $data = [])
+    public function view(string $view, array $data = []): void
     {
         require_once "../app/views/" . $view . ".php";
     }

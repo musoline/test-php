@@ -4,7 +4,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 class MailTest
 {
-    private $mail;
+    private PHPMailer $mail;
 
     public function __construct()
     {
