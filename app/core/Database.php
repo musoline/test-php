@@ -6,7 +6,7 @@ class Database
     private string $servername = "localhost";
     private string $username = "root";
     private string $password = "";
-    private PDO $connection;
+    private PDO|null $connection;
 
 
     private function connect()

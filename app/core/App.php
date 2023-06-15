@@ -4,19 +4,20 @@
 class App
 {
 
-    protected string $controller = "HomeController";
+    protected string $controllerName = "HomeController";
     protected string $method = "index";
     protected array $params = [];
+    protected Controller $controller;
     public function __construct()
     {
         $url = $this->parseUrl();
         if (file_exists('../app/controllers/' . ucfirst($url[0]) . "Controller.php")) {
-            $this->controller = ucfirst($url[0]) . "Controller";
+            $this->controllerName = ucfirst($url[0]) . "Controller";
             unset($url[0]);
         }
 
-        require_once "../app/controllers/" . $this->controller . ".php";
-        $this->controller = new $this->controller;
+        require_once "../app/controllers/" . $this->controllerName . ".php";
+        $this->controller = new $this->controllerName;
 
 
         if (isset($url[1])) {
